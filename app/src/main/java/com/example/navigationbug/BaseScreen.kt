@@ -1,15 +1,12 @@
 package com.example.navigationbug
 
-import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_base_screen.*
 
 class BaseScreen : Fragment() {
@@ -56,5 +53,10 @@ class BaseScreen : Fragment() {
     override fun onStart() {
         super.onStart()
         Log.d("BaseScreen", "onStart function called $this")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d("BaseScreen", "onSaveInstanceState function called $this")
     }
 }
